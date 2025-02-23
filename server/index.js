@@ -25,7 +25,7 @@ app.use((err, req, res, next) => {
 
 app.get("/", async (req, res) => {
   res.status(200).json({
-    message: "Hello developers from GFG",
+    message: "Hello from Shreyansh",
   });
 });
 
@@ -35,7 +35,7 @@ const connectDB = () => {
     .connect(process.env.MONGODB_URL)
     .then(() => console.log("Connected to Mongo DB"))
     .catch((err) => {
-      console.error("failed to connect with mongo");
+      console.error("failed to connect with mongo db");
       console.error(err);
     });
 };
