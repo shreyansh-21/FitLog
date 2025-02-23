@@ -61,7 +61,7 @@ const SignIn = () => {
   return (
     <Container>
       <div>
-        <Title>Welcome to Fittrack 👋</Title>
+        <Title>Welcome to Fit-Log 👋</Title>
         <Span>Please login with your details here</Span>
       </div>
       <div
