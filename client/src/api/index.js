@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "fit-log-flax.vercel.app/api",
-
+  baseURL: "fit-log-three.vercel.app/api",
 });
 
 export const UserSignUp = async (data) => API.post("/user/signup", data);
