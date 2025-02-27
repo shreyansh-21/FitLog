@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "fit-log-flax.vercel.app/api",
+  baseURL: "/api",
 
 });
 
