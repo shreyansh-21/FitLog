@@ -18,6 +18,6 @@ export const getWorkouts = async (token, date) =>
   });
 
 export const addWorkout = async (token, data) =>
-  await API.post(`/user/workouts`, data, {
+  await API.post(`/user/workout`, data, {
     headers: { Authorization: `Bearer ${token}` },
   });
