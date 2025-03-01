@@ -1,45 +1,23 @@
-const baseURL = "https://fitlog-y59t.onrender.com/api";
+import axios from "axios";
 
-export const UserSignUp = async (data) => {
-  const response = await fetch(`${baseURL}/user/signup`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
-  return response.json();
-};
+const API = axios.create({
+  baseURL: "https://fitlog-y59t.onrender.com/api",
+});
 
-export const UserSignIn = async (data) => {
-  const response = await fetch(`${baseURL}/user/signin`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
-  return response.json();
-};
+export const UserSignUp = async (data) => API.post("/user/signup", data);
+export const UserSignIn = async (data) => API.post("/user/signin", data);
 
-export const getDashboardDetails = async (token) => {
-  const response = await fetch(`${baseURL}/user/dashboard`, {
-    headers: { Authorization: `Bearer ${token}` }
+export const getDashboardDetails = async (token) =>
+  API.get("/user/dashboard", {
+    headers: { Authorization: `Bearer ${token}` },
   });
-  return response.json();
-};
 
-export const getWorkouts = async (token, date) => {
-  const response = await fetch(`${baseURL}/user/workout${date}`, {
-    headers: { Authorization: `Bearer ${token}` }
+export const getWorkouts = async (token, date) =>
+  await API.get(`/user/workout${date}`, {
+    headers: { Authorization: `Bearer ${token}` },
   });
-  return response.json();
-};
 
-export const addWorkout = async (token, data) => {
-  const response = await fetch(`${baseURL}/user/workout`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    },
-    body: JSON.stringify(data)
+export const addWorkout = async (token, data) =>
+  await API.post(`/user/workout`, data, {
+    headers: { Authorization: `Bearer ${token}` },
   });
-  return response.json();
-};
