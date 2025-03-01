@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "fit-log-three.vercel.app/api",
+  baseURL: "https://fitlog-y59t.onrender.com/api",
 });
 
 export const UserSignUp = async (data) => API.post("/user/signup", data);
